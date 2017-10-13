@@ -3,44 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Franklin, ID | Weather </title>
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Sansita');
-            h1,h2,h3,h4,h5,h6 {
-                font-family: 'Sansita', sans-serif;
-                color: blue;
-            }
-            body{
-                font-family: 'Helvetica', sans-serif;
-            }
-        </style>
         <meta name="franklin" content="franklin idaho weather page">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
     </head>
     <body>
         <header>
-            <img src="/weather/images/plan-images/logo.jpeg" alt="logo">
-            <h1><i>Weather Site</i></h1>
-            <img src="/pics/images/plan-images/raindrops.jpg" alt="background pic">
-            <h2>Franklin, ID</h2>
+                <img src="/weather/images/plan-images/logo.jpeg" alt="logo" class="logo">
+                <span class="site-name">Weather Site</span>
         </header>
         <nav>
-            <ul>
+            <ul class="navi">
                 <li><a href="https://tonylee1130.github.io/" title="Go to home page">Home</a></li>
-                <li>Franklin</li>
-                <li>Greenville</li>
-                <li>Springfield</li>
-                <li>Search</li>
+                <li><a href="#Franklin" title="Go to home page">Franklin</a></li>
+                <li><a href="#Greenville" title="Go to home page">Greenville</a></li>
+                <li><a href="#Springfiled" title="Go to home page">Springfield</a></li>
+                <li><a href="#Search" title="Go to home page">Search</a></li>
             </ul>
         </nav>
         <main>
-            <section><h3>Current Conditions</h3></section>
+            <h2>Franklin, ID</h2>
+            <section class="current"><h3>Current Conditions</h3>
                 <ul style="list-style-type:none">
                     <li><b>Wind:</b> 1 - 5</li>
                     <li><b>Precipitation:</b> 0</li>
-
                 </ul>
+            </section>
 
-            <section><h3>Location and Temperature
-                </h3></section>
+            <section class="overview"><h3>Location and Temperature
+                </h3>
                 <ul style="list-style-type:none">
                     <li><b>City:</b> Franklin</li>
                     <li><b>State:</b> ID</li>
@@ -49,8 +40,9 @@
                     <li><b>Low:</b> 66</li>
                     <li><b>Summary:</b> Sunny</li>
                 </ul>
+            </section>
 
-            <section><h3>Hourly Information</h3></section>
+            <section class="hour"><h3>Hourly Information</h3>
                 <ul style="list-style-type:none">
                     <li><b>0: 67</b></li>
                     <li><b>1: 67</b></li>
@@ -77,6 +69,7 @@
                     <li><b>22: 68</b></li>
                     <li><b>23: 66</b></li>
                 </ul>
+            </section>
         </main>
         <footer>
             &copy;2017 Weather Site, Tony Lee
