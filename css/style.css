@@ -7,15 +7,22 @@
     box-sizing: border-box;
 }
 
+article, aside, footer, header, nav, section, main, figcaption, figure {
+    display : block;
+}
+
 body {
     margin: 0; /* remove any margin from body */
     padding: 0; /* ditto for padding */
     font-family: 'Helvetica', sans-serif;
     font-size: 20px;
     box-sizing: border-box;
+
+    background-image: url("/pics/images/sunny-winter.jpg");
+    background-size: cover;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Sansita');
+
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Sansita', sans-serif;
     color: blue;
@@ -25,19 +32,22 @@ h1,h2,h3,h4,h5,h6 {
 
 header {
     background-color: #0e89d5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .logo {
     width: 50px;
-    height: auto;
-
+    height: 50px;
+    padding: 5px;
 }
 
 .site-name {
     font-size: 2em;
     font-weight: 600;
     color: black;
-    text-align: center;
+    padding-left: 10px;
 }
 
 main {
@@ -47,8 +57,6 @@ main {
     background-color: #FFF;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url("/pics/images/sunny-winter.jpg");
-    background-size: cover;
 }
 
 .current, .overview {
@@ -60,22 +68,24 @@ main {
     border-radius: 5px;
     text-align: justify;
     border: 2px solid gray;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
 .hour {
     display: none;
 }
 
-nav {
+.navi {
     background-color: #0e89d5;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    text-align: center;
-    display: block;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
 }
+
 
 nav a:link {
     text-decoration: none;
@@ -94,23 +104,48 @@ nav a:active {
     color: cyan;
 }
 
-
-.navi{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    line-height: 1%;
-}
-
 footer {
     background-color: #0e89d5;
-    position: fixed;
+    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     margin-bottom: 2em;
-    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*For Tablets*/
+@media only screen and (min-width: 768px) {
+
+    #navigation {
+        background-color: #0e89d5;
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+
+    .hour {
+        background-image: url("/weather/images/plan-images/raindrops.jpg");
+        background-size: cover;
+        background-color: rgba(200,200,200,.6);
+        margin: .2em auto;
+        border: 1px solid;
+        border-radius: 5px;
+        text-align: justify;
+        border: 2px solid gray;
+        margin-bottom: 2em;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        background-color: #FFF;
+        justify-content: space-between;
+        background-image: url("/pics/images/sunny-winter.jpg");
+        background-size: contain;
+    }
 }
 
 
