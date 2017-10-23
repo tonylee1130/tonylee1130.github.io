@@ -117,7 +117,17 @@ footer {
 
 
 /*For Tablets*/
-@media screen and (min-width:670px) {
+@media screen and (min-width:400px) {
+
+    * {
+        box-sizing : border-box;
+    }
+    *:before, *:after {
+        box-sizing : border-box;
+    }
+    article, aside, footer, header, nav, section, main, figcaption, figure {
+        display : block;
+    }
 
     #navigation {
         background-color: #0e89d5;
@@ -140,7 +150,6 @@ footer {
 
     main {
         display: flex;
-        align-items: center;
         background-color: #FFF;
         justify-content: space-between;
         background-image: url("/pics/images/sunny-winter.jpg");
