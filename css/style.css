@@ -56,7 +56,7 @@ header {
 
 main {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     align-items: center;
     background-color: #FFF;
     flex-direction: column;
@@ -75,6 +75,7 @@ main {
     text-align: justify;
     border: 2px solid gray;
     margin-bottom: 4em;
+    padding: 5px;
 }
 
 .hour {
@@ -91,7 +92,6 @@ main {
     list-style: none;
     justify-content: space-around;
 }
-
 
 nav a:link {
     text-decoration: none;
@@ -121,9 +121,7 @@ footer {
     justify-content: center;
 }
 
-
-
-@media only screen and (min-width: 100px) {
+@media only screen and (min-width: 680px) {
 
     .navi {
         background-color: #0e89d5;
