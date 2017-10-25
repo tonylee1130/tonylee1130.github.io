@@ -1,3 +1,4 @@
+/*General*/
 * {
     box-sizing: border-box; /* changes width property
     to total width instead of content width */
@@ -16,19 +17,19 @@ body {
     padding: 0; /* ditto for padding */
     font-family: 'Helvetica', sans-serif;
     font-size: 20px;
-    box-sizing: border-box;
-
     background-image: url("/pics/images/sunny-winter.jpg");
-    background-size: cover;
+    background-size: contain;
 }
 
 
-h1,h2,h3,h4,h5,h6 {
+h2,h3,h4,h5,h6 {
     font-family: 'Sansita', sans-serif;
     color: blue;
     text-align: center;
 
 }
+
+/*Head*/
 
 header {
     background-color: #0e89d5;
@@ -41,6 +42,7 @@ header {
     width: 50px;
     height: 50px;
     padding: 5px;
+    float: left;
 }
 
 .site-name {
@@ -50,6 +52,8 @@ header {
     padding-left: 10px;
 }
 
+/*Main*/
+
 main {
     display: flex;
     flex-flow: column nowrap;
@@ -57,6 +61,8 @@ main {
     background-color: #FFF;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url("/pics/images/sunny-winter.jpg");
+    background-size: contain;
 }
 
 .current, .overview {
@@ -116,20 +122,10 @@ footer {
 }
 
 
-/*For Tablets*/
-@media screen and (min-width:400px) {
 
-    * {
-        box-sizing : border-box;
-    }
-    *:before, *:after {
-        box-sizing : border-box;
-    }
-    article, aside, footer, header, nav, section, main, figcaption, figure {
-        display : block;
-    }
+@media only screen and (min-width: 100px) {
 
-    #navigation {
+    .navi {
         background-color: #0e89d5;
         display: flex;
         list-style: none;
@@ -137,9 +133,6 @@ footer {
     }
 
     .hour {
-        background-image: url("/weather/images/plan-images/raindrops.jpg");
-        background-size: cover;
-        background-color: rgba(200,200,200,.6);
         margin: .2em auto;
         border: 1px solid;
         border-radius: 5px;
@@ -152,8 +145,6 @@ footer {
         display: flex;
         background-color: #FFF;
         justify-content: space-between;
-        background-image: url("/pics/images/sunny-winter.jpg");
-        background-size: contain;
     }
 }
 
