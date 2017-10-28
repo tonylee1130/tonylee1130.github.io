@@ -135,8 +135,18 @@ footer {
 
 @media screen and (min-width: 680px) {
 
-    h2 {
+    #franklin {
+        color: red;
         margin-top: 1em;
+        position: relative;
+        left: 45px;
+    }
+
+    #greenville {
+        color: red;
+        margin-top: 1em;
+        position: relative;
+        left: 80px;
     }
 
     /*Bring nav to top*/
