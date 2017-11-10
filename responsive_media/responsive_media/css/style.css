@@ -65,9 +65,7 @@ h1 {
 
 .page-nav {
     background-color: rgb(0, 0, 0);
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    order: 1;
     width: 100%;
     z-index: 100;
 }
@@ -172,11 +170,6 @@ h1 {
         font-size: 1.5vw;
     }
 
-    .wrapper{
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
     h1 {
         font-size: 3em;
         line-height: 1.05;
@@ -184,8 +177,16 @@ h1 {
     /*	Background Images - Use with large screens */
     .page-header {
         background-image: url(/responsive_media/responsive_media/images/logo_150.png),
-            url(/responsive_media/responsive_media/images/grand-canyon_large1000.jpg);
+            url(/responsive_media/responsive_media/images/grand-canyon_large1100.jpg);
+        background-repeat: no-repeat,
+            no-repeat;
+        background-position: right, left;
     }
+
+    .page-nav {
+        order: 0;
+    }
+
     .page-nav li {
         flex: 0 1 10%;
     }
