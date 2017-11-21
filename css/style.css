@@ -24,7 +24,7 @@ body {
 }
 
 
-h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: 'Sansita', sans-serif;
     color: blue;
     text-align: center;
@@ -67,7 +67,15 @@ main {
     background-size: contain;
 }
 
-.current {
+#cityDisplay {
+    color: darkgoldenrod;
+    font-family: 'Sansita', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+
+}
+
+.current_conditions {
     background-image: url("/weather/images/plan-images/raindrops.jpg");
     background-size: cover;
     background-color: rgba(200,200,200,.6);
@@ -80,6 +88,15 @@ main {
     padding: 5px;
 }
 
+.info{
+    list-style: none;
+    padding: 0;
+}
+
+#summary, #add1, #add2, #add3 {
+    font-weight: 600;
+}
+
 .overview {
     background-image: url("/weather/images/plan-images/raindrops.jpg");
     background-size: cover;
@@ -87,10 +104,20 @@ main {
     margin: .2em auto;
     border: 1px solid;
     border-radius: 5px;
-    text-align: justify;
+    text-align: center;
     border: 2px solid gray;
     margin-bottom: 4em;
-    padding: 5px;}
+    padding: 5px;
+}
+
+.temperature{
+    list-style: none;
+    padding: 0;
+}
+
+#currentTemp{
+    font-size: 3em;
+}
 
 .hour {
     display: none;

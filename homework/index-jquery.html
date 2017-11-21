@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Franklin, ID | Weather </title>
+        <meta name="jquery index" content="jquery index weather page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
+    </head>
+
+    <body>
+        <header>
+            <img src="/weather/images/plan-images/logo.jpeg" alt="logo" class="logo">
+            <span class="site-name">Weather Index Page</span>
+        </header>
+        <nav>
+            <ul class=navi>
+                <li title="Link to the Home Page"><a href="https://tonylee1130.github.io/" title="Go to home page">Home</a></li>
+                <li title="Link to the Franklin weather page"><a href="https://tonylee1130.github.io/homework/franklin-weather-page.html" title="Go to Franklin Weather page">Franklin</a></li>
+                <li title="Link to the Greenville weather page"><a href="https://tonylee1130.github.io/homework/greenville-weather-page.html" title="Go to Greenville Weather page">Greenville</a></li>
+                <li title="link to the springfield weather page"><a href="#Springfield" title="Go to home page">Springfield</a></li>
+                <li title="Link to the Franklin weather page"><a href="https://tonylee1130.github.io/homework/current-weather.html" title="Go to current weather page">Current</a></li>
+                <li title="Search Bar"><a href="#Search" title="Go to home page">Search</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="cityDisplay"></div>
+            <div id="container">
+                <section class="overview">
+                <h2 class="heading">Current Temp</h2>
+                <ul class="temperature">
+                    <li id="currentTemp"></li>
+                </ul>
+                </section>
+
+                <section class="current_conditions">
+                    <h2>Conditions</h2>
+                    <ul class="info">
+                        <li id="summary"></li>
+                        <li id="add1"></li>
+                        <li id="add2"></li>
+                        <li id="add3"></li>
+                    </ul>
+                </section>
+
+                <section class="hour">
+                    <h3>Hourly Information</h3>
+                    <ul style="list-style-type:none" id="time">
+                        <li><b>0: 67</b></li>
+                        <li><b>1: 67</b></li>
+                        <li><b>2: 69</b></li>
+                        <li><b>3: 69</b></li>
+                        <li><b>4: 69</b></li>
+                        <li><b>5: 70</b></li>
+                        <li><b>6: 69</b></li>
+                        <li><b>7: 72</b></li>
+                        <li><b>8: 74</b></li>
+                        <li><b>9: 77</b></li>
+                        <li><b>10: 79</b></li>
+                        <li><b>11: 81</b></li>
+                        <li><b>12: 84</b></li>
+                        <li><b>13: 86</b></li>
+                        <li><b>14: 88</b></li>
+                        <li><b>15: 90</b></li>
+                        <li><b>16: 90</b></li>
+                        <li><b>17: 85</b></li>
+                        <li><b>18: 83</b></li>
+                        <li><b>19: 79</b></li>
+                        <li><b>20: 74</b></li>
+                        <li><b>21: 70</b></li>
+                        <li><b>22: 68</b></li>
+                        <li><b>23: 66</b></li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <footer>
+            &copy;2017 Weather Site, Tony Lee
+        </footer>
+        <script src="/jsonweather-html/scripts/jquery-3.0.0.min.js"></script>
+        <script src="/homework/jquery-index.js"></script>
+    </body>
+</html>
