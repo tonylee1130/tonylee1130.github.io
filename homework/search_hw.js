@@ -42,11 +42,14 @@ function getData(input) {
             console.log(data);
             var location = data.location.city + ', ' + data.location.state;
             var temp_f = data.current_observation.temp_f;
+            var forecast = data.forecastday.high;
+            var forecast_low = data.forecast.low;
             console.log('Location is: ' + location);
             console.log('Temp is: ' + temp_f);
             $("#cityDisplay").text(location);
             $("title").html(location + " | Weather Center");
             $("#currentTemp").html(Math.round(temp_f) + '°'); $("#summary").text(toTitleCase(data.current_observation.icon));
+            $("#high").html(Math.round(forecast) + '°');
             $("#cover").fadeOut(250);
         }
     });
