@@ -55,11 +55,6 @@ $(function () {
             let add3 = document.getElementById("add3");
                 add3.innerHTML = "Wind chill at " + windchill;
 
-
-
-
-
-
       $("#cover").fadeOut(250);
     }
            });

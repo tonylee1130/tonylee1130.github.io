@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Greenville, SC | Weather </title>
+        <meta name="Greenville" content="greenville south carolina weather page">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" media="screen">
+    </head>
+
+    <body>
+        <header>
+            <img src="/weather/images/plan-images/logo.jpeg" alt="logo" class="logo">
+            <span class="site-name">Weather Site</span>
+        </header>
+        <nav>
+            <ul class=navi>
+                <li title="Link to the Home Page"><a href="https://tonylee1130.github.io/homework/index-jquery.html" title="Go to nex index page">Home</a></li>
+                <li title="Link to the Franklin weather page"><a href="https://tonylee1130.github.io/homework/franklin-weather-page.html" title="Go to Franklin Page">Franklin</a></li>
+                <li title="Link to the Greenville weather page"><a href="https://tonylee1130.github.io/homework/greenville-weather-page.html" title="Go to Greenville Page">Greenville</a></li>
+                <li title="link to the springfield weather page"><a href="#Springfiled" title="Go to home page">Springfield</a></li>
+                <li title="Search Bar"><a href="#Search" title="Go to home page">Search</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div id="search"><h1>Search</h1></div>
+            <div id="container">
+                <form method="get" action="//autocomplete.wunderground.com/aq" id="searchform">
+                    <input type="search" name="query" id="query">
+                    <input type="submit" name="submit" value="Search" id="send">
+                </form>
+                <!--    Display the search results here  -->
+                <section id="searchResults">
+                    <h2>Search results</h2>
+                </section>
+                <section class="weather-container">
+                    <h1 id="cityDisplay"></h1>
+                    <h2>Current Conditions</h2>
+                    <ul id="current_conditions">
+                        <li id="currentTemp"></li>
+                        <li id="summary"></li>
+
+                    </ul>
+                </section>
+            </div>
+        </main>
+        <footer>
+            &copy;2017 Weather Site, Tony Lee
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="/homework/search_hw.js"></script>
+    </body>
+
+</html>
