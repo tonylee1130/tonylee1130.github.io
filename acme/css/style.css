@@ -1,0 +1,70 @@
+/*General*/
+* {
+    box-sizing: border-box; /* changes width property
+    to total width instead of content width */
+}
+
+*:before, *:after{
+    box-sizing: border-box;
+}
+
+article, aside, footer, header, nav, section, main, figcaption, figure {
+    display : block;
+}
+
+body {
+    margin: 0; /* remove any margin from body */
+    padding: 0; /* ditto for padding */
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    background-image: url("/acme/images/site/background.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+}
+
+nav {
+    order: 0;
+}
+.navi {
+    background-color: #de2226;
+    padding: 1em;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+
+}
+
+nav a:link {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:visited {
+    color: #000000;
+}
+
+nav a:hover {
+    color: #0000ee;
+}
+
+nav a:active {
+    color: #990033;
+}
+
+main {
+    background-color: white;
+}
+
+footer {
+    background-color: white;
+    text-align: center;
+    border-top: 3px solid black;
+}
+
+span {
+    display: block;
+}
