@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>ACME</title>
+        <title id="title">ACME</title>
         <meta name="ACME" content="acme product page">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="/acme/css/style.css" media="screen">
@@ -17,10 +17,10 @@
             <nav id="page-nav">
                 <ul class=navi>
                     <li><a href="https://tonylee1130.github.io/acme/support/template.html" title="Go to acme support page">Home</a></li>
-                    <li><a href="#anvils" title="Go to anvil product page">Anvils</a></li>
-                    <li><a href="#explosives" title="Go to explosives product page">Explosives</a></li>
-                    <li><a href="#decoys" title="Go to decoys product page">Decoys</a></li>
-                    <li><a href="#traps" title="Go to traps product page">Traps</a></li>
+                    <li><a id="anvils" href="." title="Go to anvil product page">Anvils</a></li>
+                    <li><a id="explosives" href="." title="Go to explosives product page">Explosives</a></li>
+                    <li><a id="decoys" href="." title="Go to decoys product page">Decoys</a></li>
+                    <li><a id="traps" href="." title="Go to traps product page">Traps</a></li>
                 </ul>
             </nav>
             <main>
@@ -68,18 +68,20 @@
                         </div>
                     </article>
 
-                    <section id="product-content">
-                        <h1 id="product"></h1>
-                        <div id="product-contain">
-                            <div id="product-img"></div>
-                            <div id="product-info">
-                                <p id="descrip"></p>
-                                <p id="manufac"></p>
-                                <p id="reviews"></p>
-                                <p id="price"></p>
+                    <div id="product_content">
+                        <h1 id="product_name"></h1>
+
+                        <section id="contents">
+                            <div id="product_picture"></div>
+
+                            <div id="descrip_section"><p id="product_description"></p>
+                                <h4 id="product_manufacturer"></h4>
+                                <h4 id="product_reviews"></h4>
+                                <h1 id="product_price"></h1>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+
+                    </div>
 
                 </div>
             </main>
@@ -88,7 +90,7 @@
                 <span>All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.</span>
             </footer>
         </div>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="/acme/js/acme.js"></script>
     </body>
 </html>

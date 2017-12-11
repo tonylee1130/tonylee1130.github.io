@@ -1,105 +1,60 @@
+
 // Intercept the menu link clicks
-
-//Anvil Page
-$("#page-nav").on("click", "#anvils", function (evt) {
+$("#page-nav").on("click", "a", function (evt) {
     evt.preventDefault();
+    // With the text value get the needed value from the weather.json file
+    var acmeNav = $(this).text(); // Franklin, etc...
 
-    $.getJSON("/acme/js/acme.json", function (JSON) {
-        var items = [];
-        $.each(JSON, function (key, val) {
+    if (acmeNav === "Home") {
+        document.getElementById("page-main").style.display = "block";
+        document.getElementById("product_content").style.display = "none";
+    }
 
-            if (val.list == 1) {
-                $("#page_title").text(val.name);
-                $("#home-content").text('');
-                $("#product-title").text(val.name);
-                $("#image").html("<img src='" + val.path + "' alt='anvil'>");
-                $("#description").text(val.description);
-                $("#manufacturer").html("<b> Made by: </b>" + val.manufacturer);
-                $("#price").html("<b> Price: $" + val.price + "</b>");
-                $("#reviews").html("<b> Reviews: </b>" + val.reviews);
+    else {
+        document.getElementById("page-main").style.display = "none";
+        document.getElementById("product_content").style.display = "block";
 
-                console.log(key);
-                console.log(val);
-            }
-        });
-    });
-});
+    }
 
+    //  document.getElementById("page_content").style.display = "block";
 
-//Explosives Page
-$("#page-nav").on("click", "#explosives", function (evt) {
-    evt.preventDefault();
+    console.log('Name is ' + acmeNav);
+    $.ajax({
+        url: "js/acme.json"
+        , dataType: "json"
+        , success: function (data) {
+            console.log(data);
+            console.log(data[acmeNav]);
 
-    $.getJSON("/acme/js/acme.json", function (JSON) {
-        var items = [];
-        $.each(JSON, function (key, val) {
+            var name = data[acmeNav].name;
 
-            if (val.list == 2) {
-                $("#page_title").text(val.name);
-                $("#home-content").text('');
-                $("#product-title").text(val.name);
-                $("#image").html("<img src='" + val.path + "' alt='explosives'>");
-                $("#description").text(val.description);
-                $("#manufacturer").html("<b> Made by: </b>" + val.manufacturer);
-                $("#price").html("<b> Price: $" + val.price + "</b>");
-                $("#reviews").html("<b> Reviews: </b>" + val.reviews);
+            var picture = data[acmeNav].path;
+            var descrip = data[acmeNav].description;
+            var manufact = data[acmeNav].manufacturer;
+            var review = data[acmeNav].reviews;
+            var price = data[acmeNav].price;
 
-                console.log(key);
-                console.log(val);
-            }
+            console.log(name);
+            console.log(descrip);
+            console.log(manufact);
+            console.log(review);
+            console.log(price);
 
-        });
-    });
-});
+            document.getElementById("product_name").innerHTML = name;
 
-//Decoys Page
-$("#page-nav").on("click", "#decoys", function (evt) {
-    evt.preventDefault();
+            document.getElementById("product_picture").innerHTML = '<img src="' + picture + '" alt="pictures">';
+            document.getElementById("product_description").innerHTML = descrip;
 
-    $.getJSON("/acme/js/acme.json", function (JSON) {
-        var items = [];
-        $.each(JSON, function (key, val) {
+            document.getElementById("product_manufacturer").innerHTML = "Made by: " + manufact;
+            document.getElementById("product_reviews").innerHTML = "Reviews: " + review + "/5 stars";
+            document.getElementById("product_price").innerHTML = "price: $" + price;
+            //
+            //     sum.innerHTML = weather + '<img src="' + icon + '" alt="today weather summary">';
+            //
+            //
+            //      $("#cityDisplay").text(location);
+            //      $("title").html(location + " | Weather Center");
 
-            if (val.list == 3) {
-                $("#page_title").text(val.name);
-                $("#home-content").text('');
-                $("#product-title").text(val.name);
-                $("#image").html("<img src='" + val.path + "' alt='decoys'>");
-                $("#description").text(val.description);
-                $("#manufacturer").html("<b> Made by: </b>" + val.manufacturer);
-                $("#price").html("<b> Price: $" + val.price + "</b>");
-                $("#reviews").html("<b> Reviews: </b>" + val.reviews);
-
-                console.log(key);
-                console.log(val);
-            }
-
-        });
-    });
-});
-
-//Traps Page
-$("#page-nav").on("click", "#traps", function (evt) {
-    evt.preventDefault();
-
-    $.getJSON("/acme/js/acme.json", function (JSON) {
-        var items = [];
-        $.each(JSON, function (key, val) {
-
-            if (val.list == 4) {
-                $("#page_title").text(val.name);
-                $("#home-content").text('');
-                $("#product-title").text(val.name);
-
-                $("#image").html('<img src="' + val.path + '" alt="traps">');
-                $("#description").text(val.description);
-                $("#manufacturer").html("<b> Made by: </b>" + val.manufacturer);
-                $("#price").html("<b> Price: $" + val.price + "</b>");
-                $("#reviews").html("<b> Reviews: </b>" + val.reviews);
-
-                console.log(key);
-                console.log(val);
-            }
-        });
+        }
     });
 });
