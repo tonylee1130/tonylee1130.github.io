@@ -23,7 +23,23 @@ body {
     flex-direction: column;
 }
 
-header {
+#welcome {
+    font-size: 2em;
+}
+
+#wrap {
+    display: flex;
+    background-color: #fff;
+    margin: 1em;
+    flex-direction: column;
+}
+
+#header {
+    /*    align header*/
+    background-image: url("/acme/images/site/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10em;
 }
 
 nav {
@@ -59,6 +75,96 @@ main {
     background-color: white;
 }
 
+.rocket {
+    display: flex;
+    background-image: url("/acme/images/site/feature.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#ad {
+    list-style: none;
+    color: #990033;
+    font-size: 35px;
+    position: relative;
+    left: 65%;
+    margin-bottom: 8em;
+}
+
+#ads {
+    display: flex;
+}
+
+#featured {
+    font-size: 30px;
+}
+
+.recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#recipes1 {
+    align-self: baseline;
+}
+
+#recipes2 {
+    align-self: baseline;
+    margin-bottom: 5em;
+}
+
+#bbq {
+    background-image: url(../images/recipes/bbqsand.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-left: 30px;
+}
+
+#pulled-bbq {
+    margin-right: 30px;
+}
+
+#roadrunner-pie {
+    background-image: url(../images/recipes/potpie.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#soup {
+    background-image: url(../images/recipes/soup.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+#taco {
+    background-image: url(../images/recipes/taco.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.review {
+    margin-left: 10em;
+}
+
+#acme-review {
+    font-size: 30px;
+}
+
+#testimony {
+    list-style: none;
+}
+
 footer {
     background-color: white;
     text-align: center;
@@ -67,4 +173,98 @@ footer {
 
 span {
     display: block;
+}
+
+
+
+/*Large Screen*/
+@media (min-width: 1200px) {
+    /*General*/
+    * {
+        box-sizing: border-box; /* changes width property
+        to total width instead of content width */
+    }
+
+    *:before, *:after{
+        box-sizing: border-box;
+    }
+
+    article, aside, footer, header, nav, section, main, figcaption, figure {
+        display : block;
+    }
+
+    body {
+        margin: 0; /* remove any margin from body */
+        padding: 0; /* ditto for padding */
+        font-family: 'Helvetica', sans-serif;
+        font-size: 20px;
+        background-image: url("/acme/images/site/background.jpg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #welcome {
+        font-size: 2em;
+    }
+
+    #wrap {
+        display: flex;
+        background-color: #fff;
+        margin: 1em;
+        flex-direction: column;
+    }
+
+    nav {
+        order: 0;
+    }
+    .navi {
+        background-color: #de2226;
+        padding: 1em;
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+
+    }
+
+    nav a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    nav a:visited {
+        color: #000000;
+    }
+
+    nav a:hover {
+        color: #0000ee;
+    }
+
+    nav a:active {
+        color: #990033;
+    }
+
+    main {
+        background-color: white;
+    }
+
+
+    #want-it {
+        list-style: none;
+        color: #990033;
+        font-size: 35px;
+        position: relative;
+        left: 65%;
+        margin-bottom: 8em;
+    }
+
+    footer {
+        background-color: white;
+        text-align: center;
+        border-top: 3px solid black;
+    }
+
+    span {
+        display: block;
+    }
 }
