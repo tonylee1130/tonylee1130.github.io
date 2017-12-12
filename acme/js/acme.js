@@ -54,9 +54,9 @@ $(function () {
                         '  <img src="'+pathSmall+'" alt="This is a picture of our '+ name +'." id="'+lowerCase(pageName)+'">' +
                         '</picture>');
                     $("#description").text(desc);
-                    $("#manufacturer").text(manufacturer);
-                    $("#item-reviews").text(reviews);
-                    $("#price").text("$" + price);
+                    $("#manufacturer").text("Made by: " + manufacturer);
+                    $("#item-reviews").text("Ratings: " + reviews);
+                    $("#price").text("Price: $" + price);
                 }
             });
         }

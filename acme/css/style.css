@@ -178,69 +178,28 @@ span {
 }
 
 /*Products*/
-#products {
-    display: flex;
-    flex-direction: row;
-}
 #item-display {
     display: flex;
-    align-items: center;
-    flex-flow: column nowrap;
 }
 
-#item-image {
-    display: flex;
-    justify-content: center;
-}
-
-#item-info {
-    margin: 10px 0px;
-    max-width: 95%;
-    display: flex;
-    flex-flow: column nowrap;
-    list-style: none;
-
-}
-
-#side-align {
-    display: flex;
-    flex-wrap: wrap;
-}
-#side-align li {
-    max-width: 50%;
-}
-
-.made {
-    font-weight: bold;
-    margin-top: 10px;
-    list-style: none;
+#description {
+    margin-left: 20%;
 }
 
 #manufacturer {
-    margin: 10px 35% 0px 10px;
+    margin-left: 20%;
 }
 
 #item-reviews {
-    margin: 10px 0 0 10px;
-    list-style: none;
-}
-
-#price-align {
-    display: flex;
-    list-style: none;
-
-}
-
-.price {
-    margin: 10px 10px 0 auto;
-    color: #de2226;
-    font-size: 2em;
+    margin-left: 20%;
 }
 
 #price {
     margin: 10px 0 0 0;
     color: #de2226;
     font-size: 2em;
+    margin-left: 20%;
+    margin-top: 10%;
 }
 
 
