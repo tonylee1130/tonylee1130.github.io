@@ -182,6 +182,10 @@ span {
     display: flex;
 }
 
+#item-info {
+    padding 30px;
+}
+
 #description {
     margin-left: 20%;
 }
