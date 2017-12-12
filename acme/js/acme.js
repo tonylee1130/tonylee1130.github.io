@@ -50,7 +50,7 @@ $(function () {
                     $("#item-name").text(name);
                     $("#item-image").html(
                         '<picture>' +
-                        '  <source media="(min-width: 750px)" srcset="'+imgPath+'">' +
+                        '  <source media="(min-width: 550px)" srcset="'+imgPath+'">' +
                         '  <img src="'+pathSmall+'" alt="This is a picture of our '+ name +'." id="'+lowerCase(pageName)+'">' +
                         '</picture>');
                     $("#description").text(desc);
