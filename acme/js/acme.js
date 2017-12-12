@@ -1,60 +1,69 @@
+$(function () {
+    $("#products").css("display", "none");
 
-// Intercept the menu link clicks
-$("#page-nav").on("click", "a", function (evt) {
-    evt.preventDefault();
-    // With the text value get the needed value from the weather.json file
-    var acmeNav = $(this).text(); // Franklin, etc...
+    $.getJSON("/acme/js/acme.json", function (data) {
+        console.log(data);
+        // Create Navigation bar
+        let output = '<ul class="navi">';
+        $.each(data, function (key, val) {
+            output += '<li>';
+            output += '<a href="#" title="Go to the ' + key + ' page">' + key + '</a>';
+            output += '</li>';
+        });
+        output += '</ul>';
+        $("#navigation").html(output);
+    });
 
-    if (acmeNav === "Home") {
-        document.getElementById("page-main").style.display = "block";
-        document.getElementById("product_content").style.display = "none";
-    }
+    $("#navigation").on("click", "a", function (evt) {
+        evt.preventDefault();
 
-    else {
-        document.getElementById("page-main").style.display = "none";
-        document.getElementById("product_content").style.display = "block";
+        let pageName = $(this).text();
+        console.log(pageName);
 
-    }
-
-    //  document.getElementById("page_content").style.display = "block";
-
-    console.log('Name is ' + acmeNav);
-    $.ajax({
-        url: "js/acme.json"
-        , dataType: "json"
-        , success: function (data) {
-            console.log(data);
-            console.log(data[acmeNav]);
-
-            var name = data[acmeNav].name;
-
-            var picture = data[acmeNav].path;
-            var descrip = data[acmeNav].description;
-            var manufact = data[acmeNav].manufacturer;
-            var review = data[acmeNav].reviews;
-            var price = data[acmeNav].price;
-
-            console.log(name);
-            console.log(descrip);
-            console.log(manufact);
-            console.log(review);
-            console.log(price);
-
-            document.getElementById("product_name").innerHTML = name;
-
-            document.getElementById("product_picture").innerHTML = '<img src="' + picture + '" alt="pictures">';
-            document.getElementById("product_description").innerHTML = descrip;
-
-            document.getElementById("product_manufacturer").innerHTML = "Made by: " + manufact;
-            document.getElementById("product_reviews").innerHTML = "Reviews: " + review + "/5 stars";
-            document.getElementById("product_price").innerHTML = "price: $" + price;
-            //
-            //     sum.innerHTML = weather + '<img src="' + icon + '" alt="today weather summary">';
-            //
-            //
-            //      $("#cityDisplay").text(location);
-            //      $("title").html(location + " | Weather Center");
-
+        if (pageName == "Home") {
+            $("#products").css( "display", "none" );
+            $("#home-content").css( "display", "block" );
+            $("#ads").css( "display", "flex" );
         }
+        else {
+            $("#home-content").css( "display", "none" );
+            $("#ads").css( "display", "none" );
+            $("#products").css( "display", "block" );
+
+            $.ajax({
+                url: "/acme/js/acme.json"
+                , dataType: "json"
+                , success: function (data) {
+                    //console.log(data);
+                    //console.log(data[pageName]);
+                    let name = data[pageName].name;
+                    let imgPath = data[pageName].path;
+                    let pathSmall= data[pageName].pathSmall;
+                    //console.log(imgPath + " - " +pathSmall);
+                    let desc = data[pageName].description;
+                    let manufacturer = data[pageName].manufacturer;
+                    let reviews = data[pageName].reviews;
+                    let price = data[pageName].price;
+                    //console.log(price);
+
+                    $("title").html(pageName + " | ACME");
+                    $("#item-name").text(name);
+                    $("#item-image").html(
+                        '<picture>' +
+                        '  <source media="(min-width: 750px)" srcset="'+imgPath+'">' +
+                        '  <img src="'+pathSmall+'" alt="This is a picture of our '+ name +'." id="'+lowerCase(pageName)+'">' +
+                        '</picture>');
+                    $("#description").text(desc);
+                    $("#manufacturer").text(manufacturer);
+                    $("#item-reviews").text(reviews);
+                    $("#price").text("$" + price);
+                }
+            });
+        }
+
     });
 });
+
+function lowerCase(str){
+    return str.replace(/\w+/g, function(txt){return txt.charAt(0).toLowerCase() + txt.substr(1).toLowerCase();});
+}
