@@ -163,10 +163,6 @@ footer {
     display: flex;
 }
 
-#item-info {
-    padding 30px;
-}
-
 #description {
     margin-left: 20%;
 }
@@ -291,10 +287,6 @@ footer {
     /*Products*/
     #item-display {
         display: flex;
-    }
-
-    #item-info {
-        padding 30px;
     }
 
     #description {
